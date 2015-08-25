@@ -81,7 +81,6 @@
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            // ToDo: would be nice to figure out how to bind this to pie slice path
             pieSlicePath.Radius = this.Radius;
             pieSlicePath.StartAngle = this.StartAngle;
             pieSlicePath.Angle = this.Angle;

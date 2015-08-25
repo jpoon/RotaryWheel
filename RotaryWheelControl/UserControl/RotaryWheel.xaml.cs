@@ -163,6 +163,7 @@
                         BackgroundColor = color,
                         Label = slice,
                         ForegroundColor = ForegroundColor,
+                        HideLabel = HideLabels,
                     };
 
                     _pieSlices.Add(pieSlice);

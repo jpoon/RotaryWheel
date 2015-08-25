@@ -2,9 +2,12 @@
 
 This is a .NET rotary wheel/spinner/knob/wheel-of-fortune-thingy user control built using C#/XAML. 
 The user control targets Windows 10 apps but can be used across all .NET applications.
-Here's a stylized version the user control that was used in [@HeavenFresh's](https://twitter.com/heavenfresh) application.
+Here's a stylized version that was used in [@HeavenFresh's](https://twitter.com/heavenfresh) app.
 
 ![stylized version](https://github.com/jpoon/RotaryWheel/blob/master/img/rotary_wheel_styled.gif)
+
+Given the labels of each slice, the user control will automatically create the necessary number of slices.
+Both touch and mouse events are supported, and when the user finishes manipulation of the wheel, the wheel will animate back to the center of the selected slice.
 
 Out-of-the-box, what you'll get is something more along the lines of:
 
@@ -20,7 +23,7 @@ Out-of-the-box, what you'll get is something more along the lines of:
 
 ### Configurations:
 
-| Property			| 
+| Property			| |
 | ------------------|----------------------------------------------------------------------------|
 | BackgroundColor	| color of starting slice with each subsequent slice being a lighter version |
 | ForegroundColor	| color of labels |
@@ -29,12 +32,12 @@ Out-of-the-box, what you'll get is something more along the lines of:
 | Slices			| array of strings of the value/label for each slice |
 | SelectedItemValue | read-only value denoting the currently selected slice |
 
-| Callback |
+| Callback | |
 | ------------------|-----------------------------------------------------------|
 | PropertyChanged	| event that is raised when the `SelectedItemValue` changes |
 
 
-With the above configurations in mind, we can instantiate a rotary wheel like so:
+We can instantiate a rotary wheel like so:
 
 XAML:
 

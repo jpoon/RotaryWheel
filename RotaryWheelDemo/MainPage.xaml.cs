@@ -29,21 +29,15 @@ namespace RotaryWheelDemo
         {
             this.InitializeComponent();
 
-            var rotaryWheel = new RotaryWheel()
+            rotaryWheelDemo.Slices = new[]
             {
-                BackgroundColor = Colors.Purple,
-                ForegroundColor = Colors.White,
-                Size = 200,
-                HideLabels = false,
-                Slices = new[]
-                {
-                    "Off",
-                    "Low",
-                    "Medium",
-                    "High",
-                },
+                "Off",
+                "High",
+                "Medium",
+                "Low",
             };
-            rotaryWheel.PropertyChanged += RotaryWheelDemo_PropertyChanged;
+
+            rotaryWheelDemo.PropertyChanged += RotaryWheelDemo_PropertyChanged;
         }
 
         private void RotaryWheelDemo_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
