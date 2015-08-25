@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,15 +29,21 @@ namespace RotaryWheelDemo
         {
             this.InitializeComponent();
 
-            rotaryWheelDemo.Slices = new[]
+            var rotaryWheel = new RotaryWheel()
             {
-                "Off",
-                "Low",
-                "Medium",
-                "High",
+                BackgroundColor = Colors.Purple,
+                ForegroundColor = Colors.White,
+                Size = 200,
+                HideLabels = false,
+                Slices = new[]
+                {
+                    "Off",
+                    "Low",
+                    "Medium",
+                    "High",
+                },
             };
-
-            rotaryWheelDemo.PropertyChanged += RotaryWheelDemo_PropertyChanged;
+            rotaryWheel.PropertyChanged += RotaryWheelDemo_PropertyChanged;
         }
 
         private void RotaryWheelDemo_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

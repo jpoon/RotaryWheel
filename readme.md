@@ -1,15 +1,14 @@
 # Rotary Wheel
 
-This is a Rotary Wheel/Spinner/Knob user control built for Windows apps. 
-
-Basic out-of-the-box looks like this:
-
-![basic version](https://github.com/jpoon/RotaryWheel/blob/master/img/rotary_wheel_basic.png)
-
-Stylized version:
+This is a .NET rotary wheel/spinner/knob/wheel-of-fortune-thingy user control built using C#/XAML. 
+The user control targets Windows 10 apps but can be used across all .NET applications.
+Here's a stylized version the user control that was used in [@HeavenFresh's](https://twitter.com/heavenfresh) application.
 
 ![stylized version](https://github.com/jpoon/RotaryWheel/blob/master/img/rotary_wheel_styled.gif)
 
+Out-of-the-box, what you'll get is something more along the lines of:
+
+![basic version](https://github.com/jpoon/RotaryWheel/blob/master/img/rotary_wheel_basic.png)
 
 ## Installation
 
@@ -19,7 +18,33 @@ Stylized version:
 
 ## Usage
 
-In your XAML,
+Configurations:
+
+| Property			| 
+| ------------------|----------------------------------------------------------------------------|
+| BackgroundColor	| color of starting slice with each subsequent slice being a lighter version |
+
+With C#:
+
+```c#
+	var rotaryWheel = new RotaryWheel()
+	{
+		BackgroundColor = Colors.Purple,
+		ForegroundColor = Colors.White,
+		Size = 200,
+		HideLabels = false,
+		Slices = new[]
+		{
+			"Off",
+			"Low",
+			"Medium",
+			"High",
+		},
+	};
+	rotaryWheel.PropertyChanged += RotaryWheelDemo_PropertyChanged;
+```
+
+XAML:
 
 ```xml
    <userControl:RotaryWheel 
@@ -29,20 +54,19 @@ In your XAML,
 		ForegroundColor="White" />
 ```
 
-In your code-behind,
+code-behind:
 
 ```c#
 	rotaryWheelDemo.Slices = new[]
 	{
-		"Off",
+		"Auto",
+		"Quiet",
 		"Low",
 		"Medium",
 		"High",
 	};
 ```
 
-## Reference
-http://blog.jerrynixon.com/2012/06/windows-8-animated-pie-slice.html
 
 ## License
  Copyright (c) Microsoft Corporation, licensed under [The MIT License (MIT)](https://github.com/jpoon/crunchbase/blob/master/LICENSE).

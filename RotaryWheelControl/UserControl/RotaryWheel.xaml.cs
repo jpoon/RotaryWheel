@@ -1,7 +1,4 @@
-﻿using RotaryWheelControl;
-using RotaryWheelControl.Extensions;
-
-namespace RotaryWheelControl.UserControl
+﻿namespace RotaryWheelControl.UserControl
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -9,6 +6,7 @@ namespace RotaryWheelControl.UserControl
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
+    using RotaryWheelControl.Extensions;
     using Windows.UI;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Input;
