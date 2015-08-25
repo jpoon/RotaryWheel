@@ -13,8 +13,6 @@
             Size="200"
             BackgroundColor="Purple" 
             ForegroundColor="White" />
-
-
         <TextBlock Text="{Binding SelectedItemValue, ElementName=rotaryWheelDemo}"  />
     </StackPanel>
 </Page>
