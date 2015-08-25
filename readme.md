@@ -18,31 +18,23 @@ Out-of-the-box, what you'll get is something more along the lines of:
 
 ## Usage
 
-Configurations:
+### Configurations:
 
 | Property			| 
 | ------------------|----------------------------------------------------------------------------|
 | BackgroundColor	| color of starting slice with each subsequent slice being a lighter version |
+| ForegroundColor	| color of labels |
+| Size				| size of the rotary wheel |
+| HideLabels		| boolean value denoting whether to show or hide the labels |
+| Slices			| array of strings of the value/label for each slice |
+| SelectedItemValue | read-only value denoting the currently selected slice |
 
-With C#:
+| Callback |
+| ------------------|-----------------------------------------------------------|
+| PropertyChanged	| event that is raised when the `SelectedItemValue` changes |
 
-```c#
-	var rotaryWheel = new RotaryWheel()
-	{
-		BackgroundColor = Colors.Purple,
-		ForegroundColor = Colors.White,
-		Size = 200,
-		HideLabels = false,
-		Slices = new[]
-		{
-			"Off",
-			"Low",
-			"Medium",
-			"High",
-		},
-	};
-	rotaryWheel.PropertyChanged += RotaryWheelDemo_PropertyChanged;
-```
+
+With the above configurations in mind, we can instantiate a rotary wheel like so:
 
 XAML:
 
@@ -54,7 +46,7 @@ XAML:
 		ForegroundColor="White" />
 ```
 
-code-behind:
+C# (code-behind):
 
 ```c#
 	rotaryWheelDemo.Slices = new[]
@@ -65,7 +57,11 @@ code-behind:
 		"Medium",
 		"High",
 	};
+
+	rotaryWheel.PropertyChanged += <some_event_handler>;
 ```
+
+Take a look at the [demo project](https://github.com/jpoon/RotaryWheel/tree/master/RotaryWheelDemo) for a closer look.
 
 
 ## License
