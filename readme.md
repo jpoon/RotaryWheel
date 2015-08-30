@@ -66,6 +66,9 @@ C# (code-behind):
 
 Take a look at the [demo project](https://github.com/jpoon/RotaryWheel/tree/master/RotaryWheelDemo) for a closer look.
 
+## How
+
+If you are curious of how this all works, check out the accompanying blog [post](http://jasonpoon.ca/2015/08/29/building-a-rotary-wheel-control/).
 
 ## License
  Copyright (c) Microsoft Corporation, licensed under [The MIT License (MIT)](https://github.com/jpoon/crunchbase/blob/master/LICENSE).
