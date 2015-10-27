@@ -1,4 +1,4 @@
-# Rotary Wheel
+# Rotary Wheel User Control
 
 This is a .NET rotary wheel/spinner/knob/wheel-of-fortune-thingy user control built using C#/XAML. 
 The user control targets Windows 10 apps but can be used across all .NET applications.
@@ -15,13 +15,6 @@ Out-of-the-box, what you'll get is something more along the lines of:
 
 ## Installation
 
-### NuGet
-
-```bash
-PM> Install-Package RotaryWheelControl
-```
-
-### Manually
 * Download
 * Add project as a reference 
 * Build
@@ -49,7 +42,7 @@ We can instantiate a rotary wheel like so:
 XAML:
 
 ```xml
-   <userControl:RotaryWheel 
+   <userControl:RotaryWheel
 		x:Name="rotaryWheelDemo" 
 		Size="200"
 		BackgroundColor="Purple" 
