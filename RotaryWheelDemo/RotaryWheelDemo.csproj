@@ -128,9 +128,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RotaryWheelControl\RotaryWheelControl.csproj">
+    <ProjectReference Include="..\RotaryWheelControl\RotaryWheelUserControl.csproj">
       <Project>{72deea3a-3449-45f7-94c8-96f7a9b13d2d}</Project>
-      <Name>RotaryWheelControl</Name>
+      <Name>RotaryWheelUserControl</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

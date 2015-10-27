@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryWheelControl", "RotaryWheelControl\RotaryWheelControl.csproj", "{72DEEA3A-3449-45F7-94C8-96F7A9B13D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryWheelUserControl", "RotaryWheelControl\RotaryWheelUserControl.csproj", "{72DEEA3A-3449-45F7-94C8-96F7A9B13D2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaryWheelDemo", "RotaryWheelDemo\RotaryWheelDemo.csproj", "{586201AA-1A70-4B4F-BFA2-6D49A38478DF}"
 EndProject

@@ -1,10 +1,13 @@
-﻿namespace RotaryWheelControl.UserControl
+﻿// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+namespace RotaryWheelUserControl
 {
-    using RotaryWheelControl;
     using Windows.UI;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media;
+    using RotaryWheelUserControl.Helpers;
 
     public sealed partial class PieSlice : UserControl
     {

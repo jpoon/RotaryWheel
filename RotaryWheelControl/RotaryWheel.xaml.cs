@@ -1,4 +1,7 @@
-﻿namespace RotaryWheelControl.UserControl
+﻿// Copyright (c) Microsoft. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+namespace RotaryWheelUserControl
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -6,7 +9,8 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using RotaryWheelControl.Extensions;
+    using RotaryWheelUserControl.Extensions;
+    using RotaryWheelUserControl.Helpers;
     using Windows.UI;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Input;
@@ -100,8 +104,8 @@
 
         public RotaryWheel()
         {
-            InitializeComponent();
             DataContext = this;
+            InitializeComponent();
 
             Loaded += (sender, args) =>
             {
@@ -205,7 +209,5 @@
                 eventHandler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-
     }
 }
