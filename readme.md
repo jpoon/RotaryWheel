@@ -15,6 +15,13 @@ Out-of-the-box, what you'll get is something more along the lines of:
 
 ## Installation
 
+### NuGet
+
+```bash
+PM> Install-Package RotaryWheelControl
+```
+
+### Manually
 * Download
 * Add project as a reference 
 * Build
@@ -71,4 +78,4 @@ Take a look at the [demo project](https://github.com/jpoon/RotaryWheel/tree/mast
 If you are curious of how this all works, check out the accompanying blog [post](http://jasonpoon.ca/2015/08/29/building-a-rotary-wheel-control/).
 
 ## License
- Copyright (c) Microsoft Corporation, licensed under [The MIT License (MIT)](https://github.com/jpoon/crunchbase/blob/master/LICENSE).
+ Copyright (c) Microsoft Corporation, licensed under [The MIT License (MIT)](https://raw.githubusercontent.com/jpoon/RotaryWheel/master/LICENSE).
