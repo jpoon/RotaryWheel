@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RotaryWheelControl")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Rotary Wheel User Control")]
+[assembly: AssemblyDescription("A rotary wheel control for Windows UWP Applications.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Jason Poon")]
 [assembly: AssemblyProduct("RotaryWheelControl")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
+[assembly: AssemblyTrademark("Microsoft Corporation")]
 [assembly: AssemblyCulture("")]
 
 // Version information for an assembly consists of the following four values:
