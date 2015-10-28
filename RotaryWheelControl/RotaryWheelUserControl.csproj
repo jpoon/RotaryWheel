@@ -111,28 +111,33 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="RotaryWheelUserControl.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\BooleanToVisibilityConverter.cs" />
     <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="PieSlice.xaml.cs">
       <DependentUpon>PieSlice.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="PieSlicePath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\Quadrants.cs" />
     <Compile Include="RotaryWheel.xaml.cs">
       <DependentUpon>RotaryWheel.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="PieSlice.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="RotaryWheel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
@@ -152,4 +157,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <NugetExe>"$(SolutionDir).nuget\nuget.exe"</NugetExe>
+  </PropertyGroup>
+  <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Release' ">
+    <!-- package with NuGet -->
+    <Exec WorkingDirectory="$(BaseDir)" Command="$(NugetExe) pack $(MSBuildProjectFile) -OutputDirectory $(OutDir) -Symbols -Verbosity detailed -Prop Configuration=$(Configuration);" />
+  </Target>
 </Project>
