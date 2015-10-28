@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RotaryWheelUserControl")]
 [assembly: AssemblyDescription("Rotary wheel user control for Windows UWP Applications.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Jason Poon")]
 [assembly: AssemblyProduct("RotaryWheelUserControl")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("Microsoft Corporation")]
