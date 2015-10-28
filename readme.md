@@ -15,9 +15,11 @@ Out-of-the-box, what you'll get is something more along the lines of:
 
 ## Installation
 
-* Download
-* Add project as a reference 
-* Build
+The user control is available on NuGet. To install, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
+
+'''
+PM> Install-Package RotaryWheelUserControl
+'''
 
 ## Usage
 

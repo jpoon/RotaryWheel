@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RotaryWheelUserControl")]
-[assembly: AssemblyDescription("Rotary wheel user control for Windows UWP Applications.")]
+[assembly: AssemblyDescription("A rotary wheel user control for Windows UWP Applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Jason Poon")]
 [assembly: AssemblyProduct("RotaryWheelUserControl")]
