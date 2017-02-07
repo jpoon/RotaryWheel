@@ -1,9 +1,5 @@
 # Rotary Wheel User Control
 
-<a href="https://nuget.org/packages/RotaryWheelUserControl">
-    <img src="https://img.shields.io/nuget/dt/RotaryWheelUserControl.svg" alt="nuget">
-</a>
-
 This is a .NET rotary wheel/spinner/knob/wheel-of-fortune-thingy user control built using C#/XAML. 
 The user control targets Windows 10 apps but can be used across all .NET applications.
 Here's a stylized version that was used in [@HeavenFresh's](https://twitter.com/heavenfresh) app.
