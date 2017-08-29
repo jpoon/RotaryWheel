@@ -21,6 +21,18 @@ namespace RotaryWheelUserControl
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Spins the wheel randomly.
+        /// </summary>
+        /// <param name="maxSpins">Maximum no. of spins or revolutions.</param>
+        /// <param name="durationInSec">Spin duration in Second. [-1 denotes random duration]</param>
+        public void Spin(int maxSpins=5, int durationInSec = -1)
+        {
+            Random r = new Random();
+            int steps = r.Next(_pieSlices.Count, _pieSlices.Count* maxSpins);
+            SpinTo(steps,durationInSec);
+        }
+        
         private Color _backgroundColor = Colors.Black;
         public Color BackgroundColor
         {
@@ -82,7 +94,8 @@ namespace RotaryWheelUserControl
                 }
             }
         }
-
+        
+        
         public string SelectedItemValue
         {
             get { return _selectedItem?.Label; }
@@ -155,10 +168,11 @@ namespace RotaryWheelUserControl
             int count = _pieSlices.Count;
             int currIndex = _pieSlices.IndexOf(SelectedItem);
             int fullSpin = itemIndex / count;
-            itemIndex = itemIndex % count;
-            int steps = currIndex-itemIndex;
+            int steps = currIndex- (itemIndex % count);
             if (steps < 0)
+            {
                 steps = count + steps;
+            }
 
             var startAngle = SelectedItem.StartAngle + SelectedItem.Angle / 2;
             var finalAngle = startAngle + fullSpin*360 + steps*360/count;
@@ -166,25 +180,19 @@ namespace RotaryWheelUserControl
             doubleAnimation.From = startAngle;
             doubleAnimation.To = finalAngle;
             if(durationInSec>0)
+            {
                 doubleAnimation.Duration = new Windows.UI.Xaml.Duration(new TimeSpan(0, 0, durationInSec));
+            }
             else
+            {
                 doubleAnimation.Duration = new Windows.UI.Xaml.Duration(new TimeSpan(0, 0, r.Next(3, 6)));
+            }
             storyBoard.Begin();
             storyBoard.Completed += StoryBoard_Completed;
             Angle = ((int)finalAngle) % 360;
 
         }
-        /// <summary>
-        /// Spins the wheel randomly.
-        /// </summary>
-        /// <param name="maxSpins">Maximum no. of spins or revolutions.</param>
-        /// <param name="durationInSec">Spin duration in Second. [-1 denotes random duration]</param>
-        public void Spin(int maxSpins=5, int durationInSec = -1)
-        {
-            Random r = new Random(DateTime.Now.Millisecond);
-            int steps = r.Next(_pieSlices.Count, _pieSlices.Count* maxSpins);
-            SpinTo(steps,durationInSec);
-        }
+        
         private void StoryBoard_Completed(object sender, object e)
         {
             var angleFromYAxis = 360 - Angle;
