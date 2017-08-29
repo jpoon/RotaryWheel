@@ -21,17 +21,6 @@ namespace RotaryWheelUserControl
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// Spins the wheel randomly.
-        /// </summary>
-        /// <param name="maxSpins">Maximum no. of spins or revolutions.</param>
-        /// <param name="durationInSec">Spin duration in Second. [-1 denotes random duration]</param>
-        public void Spin(int maxSpins=5, int durationInSec = -1)
-        {
-            Random r = new Random();
-            int steps = r.Next(_pieSlices.Count, _pieSlices.Count* maxSpins);
-            SpinTo(steps,durationInSec);
-        }
         
         private Color _backgroundColor = Colors.Black;
         public Color BackgroundColor
@@ -157,7 +146,17 @@ namespace RotaryWheelUserControl
                 }
             };
         }
-
+        /// <summary>
+        /// Spins the wheel randomly.
+        /// </summary>
+        /// <param name="maxSpins">Maximum no. of spins or revolutions.</param>
+        /// <param name="durationInSec">Spin duration in Second. [-1 denotes random duration]</param>
+        public void Spin(int maxSpins=5, int durationInSec = -1)
+        {
+            Random r = new Random();
+            int steps = r.Next(_pieSlices.Count, _pieSlices.Count* maxSpins);
+            SpinTo(steps,durationInSec);
+        }
         private void SpinTo(int itemIndex, int durationInSec = -1)
         {
             Random r = new Random();
