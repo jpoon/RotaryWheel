@@ -21,11 +21,14 @@ namespace RotaryWheelUserControl
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        
         private Color _backgroundColor = Colors.Black;
         public Color BackgroundColor
         {
             get { return _backgroundColor; }
-            set { SetField(ref _backgroundColor, value); }
+            set { SetField(ref _backgroundColor, value); 
+            Draw();
+            }
         }
 
         private Color _foregroundColor = Colors.White;
@@ -80,7 +83,8 @@ namespace RotaryWheelUserControl
                 }
             }
         }
-
+        
+        
         public string SelectedItemValue
         {
             get { return _selectedItem?.Label; }
@@ -142,7 +146,58 @@ namespace RotaryWheelUserControl
                 }
             };
         }
+        /// <summary>
+        /// Spins the wheel randomly.
+        /// </summary>
+        /// <param name="maxSpins">Maximum no. of spins or revolutions.</param>
+        /// <param name="durationInSec">Spin duration in Second. [-1 denotes random duration]</param>
+        public void Spin(int maxSpins=5, int durationInSec = -1)
+        {
+            Random r = new Random();
+            int steps = r.Next(_pieSlices.Count, _pieSlices.Count* maxSpins);
+            SpinTo(steps,durationInSec);
+        }
+        private void SpinTo(int itemIndex, int durationInSec = -1)
+        {
+            Random r = new Random();
+            var angleFromYAxis = 360 - Angle;
+            SelectedItem = _pieSlices
+                .SingleOrDefault(p => p.StartAngle <= angleFromYAxis && (p.StartAngle + p.Angle) > angleFromYAxis);
 
+            int count = _pieSlices.Count;
+            int currIndex = _pieSlices.IndexOf(SelectedItem);
+            int fullSpin = itemIndex / count;
+            int steps = currIndex- (itemIndex % count);
+            if (steps < 0)
+            {
+                steps = count + steps;
+            }
+
+            var startAngle = SelectedItem.StartAngle + SelectedItem.Angle / 2;
+            var finalAngle = startAngle + fullSpin*360 + steps*360/count;
+
+            doubleAnimation.From = startAngle;
+            doubleAnimation.To = finalAngle;
+            if(durationInSec>0)
+            {
+                doubleAnimation.Duration = new Windows.UI.Xaml.Duration(new TimeSpan(0, 0, durationInSec));
+            }
+            else
+            {
+                doubleAnimation.Duration = new Windows.UI.Xaml.Duration(new TimeSpan(0, 0, r.Next(3, 6)));
+            }
+            storyBoard.Begin();
+            storyBoard.Completed += StoryBoard_Completed;
+            Angle = ((int)finalAngle) % 360;
+
+        }
+        
+        private void StoryBoard_Completed(object sender, object e)
+        {
+            var angleFromYAxis = 360 - Angle;
+            SelectedItem = _pieSlices
+                .SingleOrDefault(p => p.StartAngle <= angleFromYAxis && (p.StartAngle + p.Angle) > angleFromYAxis);
+        }
         private void Draw()
         {
             _pieSlices.Clear();
