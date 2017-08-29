@@ -160,7 +160,7 @@ namespace RotaryWheelUserControl
 
         private void SpinTo(int itemIndex, int durationInSec = -1)
         {
-            Random r = new Random(DateTime.Now.Millisecond);
+            Random r = new Random();
             var angleFromYAxis = 360 - Angle;
             SelectedItem = _pieSlices
                 .SingleOrDefault(p => p.StartAngle <= angleFromYAxis && (p.StartAngle + p.Angle) > angleFromYAxis);
